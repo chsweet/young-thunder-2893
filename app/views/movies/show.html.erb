@@ -2,7 +2,16 @@
 <h3>Creation Year : <%= @movie.creation_year %></h3>
 <h3>Genre : <%= @movie.genre %></h3>
 <br>
+
 <h3>Actors</h3>
 <% @actors.each do |actor| %>
   <p><%= actor.name %></p>
+<% end %>
+<br>
+<h4> Add Actor to Movie </h4>
+<%= form_with url: "/movies/#{@movie.id}", method: :patch, local: true do |f| %>
+  <%= f.label :name, "Actor Name" %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.submit 'Add' %>
 <% end %>
