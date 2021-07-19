@@ -5,4 +5,9 @@ class Actor < ApplicationRecord
   def self.actors_by_age
     order(:age)
   end
+
+  def self.actors_avg_age
+    total = sum(:age)
+    (total / count.to_f).round(2)
+  end
 end
