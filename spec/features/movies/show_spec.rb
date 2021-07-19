@@ -33,10 +33,10 @@ RSpec.describe 'movie show page' do
     expect(@actor_2.name).to_not appear_before(@actor_3.name)
   end
   #User story 2
-  xit 'displays the average age of the actors' do
+  it 'displays the average age of the actors' do
     visit "/movies/#{@movie_1.id}"
-
-    expect(page).to have_content("Average Age: 47.3")
+    save_and_open_page
+    expect(page).to have_content("Average Age: 47")
   end
   #User story 3
   it 'does not diasplay any actors not part of the movie' do

@@ -2,6 +2,7 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
     @actors = @movie.actors.actors_by_age
+    @avg_age = @movie.actors.actors_avg_age
   end
 
   def update

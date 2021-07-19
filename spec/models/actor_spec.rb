@@ -29,7 +29,7 @@ RSpec.describe Actor do
     #User story 2
     describe '::actors_avg_age' do
       it 'returns actors average age' do
-        expect(Actor.actors_avg_age).to eq(47.33)
+        expect(Actor.actors_avg_age).to eq(47)
       end
     end
   end

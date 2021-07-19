@@ -1,12 +1,13 @@
 <h1><%= @movie.title %></h1>
-<h3>Creation Year : <%= @movie.creation_year %></h3>
-<h3>Genre : <%= @movie.genre %></h3>
+<h4>Creation Year : <%= @movie.creation_year %></h4>
+<h4>Genre : <%= @movie.genre %></h4>
 <br>
 
 <h3>Actors</h3>
 <% @actors.each do |actor| %>
   <p><%= actor.name %></p>
 <% end %>
+<h4>Average Age: <%= @avg_age %></h4>
 <br>
 <h4> Add Actor to Movie </h4>
 <%= form_with url: "/movies/#{@movie.id}", method: :patch, local: true do |f| %>
