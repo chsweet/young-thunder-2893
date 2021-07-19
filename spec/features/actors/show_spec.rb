@@ -36,12 +36,13 @@ RSpec.describe 'actor show page' do
 
   it 'displays unique list of all the actors the actor has worked with' do
     visit "/actors/#{@actor_1.id}"
-
+    save_and_open_page
     expect(page).to have_content(@actor_2.name)
     expect(page).to have_content(@actor_3.name)
     expect(page).to have_content(@actor_6.name)
     expect(page).to have_content(@actor_7.name)
     expect(page).to have_content(@actor_8.name)
+    expect(page).to have_content(@actor_7.name)
   end
 
 end
