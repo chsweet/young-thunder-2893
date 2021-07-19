@@ -19,7 +19,7 @@ RSpec.describe 'studio index page' do
   #User story 1
   it 'displays all studios and all studio movies' do
     visit '/studios'
-    save_and_open_page
+    
     within("#studio-#{@studio_1.id}") do
       expect(page).to have_content(@studio_1.name)
       expect(page).to have_content(@movie_1.title)
