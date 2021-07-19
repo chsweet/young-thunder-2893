@@ -26,7 +26,7 @@ RSpec.describe 'movie show page' do
     # ActorMovie.create!(movie: @movie_4, actor: @actor_7)
     # ActorMovie.create!(movie: @movie_5, actor: @actor_8)
   end
-
+  #User story 2
   it 'displays movie title, creation year, and genre' do
     visit "/movies/#{@movie_1.id}"
 
@@ -34,7 +34,7 @@ RSpec.describe 'movie show page' do
     expect(page).to have_content(@movie_1.creation_year)
     expect(page).to have_content(@movie_1.genre)
   end
-
+  #User story 2
   it 'lists all actors youngest to oldest' do
     visit "/movies/#{@movie_1.id}"
 
@@ -42,7 +42,7 @@ RSpec.describe 'movie show page' do
     expect(@actor_2.name).to appear_before(@actor_1.name)
     expect(@actor_2.name).to_not appear_before(@actor_3.name)
   end
-
+  #User story 2
   it 'displays the average age of the actors' do
     visit "/movies/#{@movie_1.id}"
 
