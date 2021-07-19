@@ -10,4 +10,15 @@ class Actor < ApplicationRecord
     total = sum(:age)
     (total / count.to_f).round(0)
   end
+
+  def actors_coworkers
+    coworkers = []
+    movies.each do |movie|
+      movie.actors.each do |actor|
+        coworkers << actor.name
+      end
+    end
+    coworkers.delete(name)
+    coworkers.uniq
+  end
 end
